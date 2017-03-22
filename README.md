@@ -24,7 +24,7 @@ $ yarn add webpack2-sentry-plugin --dev
 1. Configure Webpack to use the Plugin:
 
    ```js
-   var SentryPlugin = require('webpack-sentry-plugin');
+   var SentryPlugin = require('webpack2-sentry-plugin');
    
    var config = {
      devtool: 'source-map', // Also possible: hidden-source-map
