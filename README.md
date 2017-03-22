@@ -1,8 +1,8 @@
 # Sentry plugin
 
-[![Build Status](https://travis-ci.org/40thieves/webpack-sentry-plugin.svg?branch=master)](https://travis-ci.org/40thieves/webpack-sentry-plugin)
+[![Build Status](https://travis-ci.org/Kamshak/webpack-sentry-plugin.svg?branch=master)](https://travis-ci.org/Kamshak/webpack-sentry-plugin)
 
-A webpack plugin to upload source maps to [Sentry](https://sentry.io/).
+A webpack plugin to upload source maps to [Sentry](https://sentry.io/). Forked to support hidden sourcemaps and more configurations.
 
 ### Installation
 
@@ -10,29 +10,24 @@ A webpack plugin to upload source maps to [Sentry](https://sentry.io/).
 Using npm:
 
 ```
-$ npm install webpack-sentry-plugin --save-dev
+$ npm install webpack2-sentry-plugin --save-dev
 ```
 
 Using yarn:
 
 ```
-$ yarn add webpack-sentry-plugin --dev
+$ yarn add webpack2-sentry-plugin --dev
 ```
 
 ### Usage
 
-1. Require `webpack-sentry-plugin`:
+1. Configure Webpack to use the Plugin:
 
    ```js
    var SentryPlugin = require('webpack-sentry-plugin');
-   ```
-
-2. Configure webpack to output source maps. Recommended reading: [webpack docs](https://webpack.js.org/configuration/devtool/), [Sentry docs](https://docs.sentry.io/clients/javascript/sourcemaps)
-
-3. Add to webpack config:
-
-   ```js
+   
    var config = {
+     devtool: 'source-map', // Also possible: hidden-source-map
      plugins: [
        new SentryPlugin({
          // Sentry options are required
@@ -48,6 +43,8 @@ $ yarn add webpack-sentry-plugin --dev
      ]
    }
    ```
+   
+Recommended reading for sourcemaps: [webpack docs](https://webpack.js.org/configuration/devtool/), [Sentry docs](https://docs.sentry.io/clients/javascript/sourcemaps). If you are using the uglify plugin make sure that it is configured with ``sourcemaps: true``
 
 #### Options
 
@@ -129,7 +126,10 @@ Contributions are welcome 😄. To run the tests, please ensure you have the rel
 
 #### Commands to be aware of
 
-*Warning* ⚠️: The test suite will create releases & upload files. They should be cleaned up afterward, but ensure that you are not overwriting something important!
+*Warning* ⚠️: The test suite will create releases & upload files on Sentry. They should be cleaned up afterward, but ensure that you are not overwriting something important!
 
 - `npm test`: Runs the test suite
 - `npm run build`: Compiles distribution build
+
+#### Differences to original version
+This plugin determines which sourcemap maps to which file and passes this information on to Sentry. That way you can freely rename sourcemaps.
