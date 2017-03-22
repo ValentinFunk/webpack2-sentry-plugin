@@ -19,12 +19,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Kamshak/webpack-sentry-plugin.git"
+    "url": "git@github.com:Kamshak/webpack2-sentry-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/Kamshak/webpack-sentry-plugin/issues"
+    "url": "https://github.com/Kamshak/webpack2-sentry-plugin/issues"
   },
-  "homepage": "https://github.com/Kamshak/webpack-sentry-plugin",
+  "homepage": "https://github.com/Kamshak/webpack2-sentry-plugin",
   "dependencies": {
     "lodash": "^4.17.2",
     "request": "^2.79.0",
