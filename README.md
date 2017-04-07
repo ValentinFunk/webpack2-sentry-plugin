@@ -132,4 +132,4 @@ Contributions are welcome 😄. To run the tests, please ensure you have the rel
 - `npm run build`: Compiles distribution build
 
 #### Differences to original version
-This plugin determines which sourcemap maps to which file and passes this information on to Sentry. That way you can freely rename sourcemaps.
+This plugin determines which sourcemap maps to which file and passes this information on to Sentry. That way you can freely rename sourcemaps. Support for devtool: hidden-sourcemap was also added.
