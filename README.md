@@ -1,6 +1,6 @@
 # Sentry plugin
 
-[![npm version](https://badge.fury.io/js/webpack2-sentry-plugin.svg)](https://badge.fury.io/js/webpack2-sentry-plugin) [![Build Status](https://travis-ci.org/Kamshak/webpack-sentry-plugin.svg?branch=master)](https://travis-ci.org/Kamshak/webpack-sentry-plugin)
+[![npm version](https://badge.fury.io/js/webpack2-sentry-plugin.svg)](https://badge.fury.io/js/webpack2-sentry-plugin) [![Build Status](https://travis-ci.org/Kamshak/webpack2-sentry-plugin.svg?branch=master)](https://travis-ci.org/Kamshak/webpack2-sentry-plugin)
 
 A webpack plugin to upload source maps to [Sentry](https://sentry.io/). Forked to support hidden sourcemaps and more configurations.
 
