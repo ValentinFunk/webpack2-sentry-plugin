@@ -43,7 +43,7 @@ $ yarn add webpack2-sentry-plugin --dev
          body: {
            refs: [{
              repository: 'project-repo',
-             commit: process.env.GIT_SHA'
+             commit: process.env.GIT_SHA
            }]
          }
        })
