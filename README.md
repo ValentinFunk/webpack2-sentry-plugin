@@ -25,7 +25,7 @@ $ yarn add webpack2-sentry-plugin --dev
 
    ```js
    var SentryPlugin = require('webpack2-sentry-plugin');
-   
+
    var config = {
      devtool: 'source-map', // Also possible: hidden-source-map
      plugins: [
@@ -34,16 +34,23 @@ $ yarn add webpack2-sentry-plugin --dev
          organisation: 'your-organisation-name',
          project: 'your-project-name',
          apiKey: process.env.SENTRY_API_KEY,
-         
+
          // Release version name/hash is required
          release: function() {
            return process.env.GIT_SHA
+         },
+         // custom options, like refs to send to sentry
+         body: {
+           refs: [{
+             repository: 'project-repo',
+             commit: process.env.GIT_SHA'
+           }]
          }
        })
      ]
    }
    ```
-   
+
 Recommended reading for sourcemaps: [webpack docs](https://webpack.js.org/configuration/devtool/), [Sentry docs](https://docs.sentry.io/clients/javascript/sourcemaps). If you are using the uglify plugin make sure that it is configured with ``sourcemaps: true``
 
 #### Options
@@ -114,6 +121,7 @@ var config = {
 
 - `apiKey`: Sentry api key ([Generate one here](https://sentry.io/api/))
 
+- `body`: custom body attributes to send to sentry. See https://docs.sentry.io/learn/releases for details.
 
 ### Thanks
 
