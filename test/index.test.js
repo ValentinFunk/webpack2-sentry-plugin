@@ -60,8 +60,8 @@ describe('uploading files to Sentry release', () => {
 	})
 
 	it('uploads source and matching source map with output.sourceMapFilename', () => {
-		const webpackConfig = createWebpackConfig({ release });
-        webpackConfig.output.sourceMapFilename = 'renamed-the-sourcemap.map';
+		const webpackConfig = createWebpackConfig({ release })
+		webpackConfig.output.sourceMapFilename = 'renamed-the-sourcemap.map'
 
 		return runWebpack(webpackConfig)
 			.then(() => fetchFiles(release))
@@ -70,11 +70,11 @@ describe('uploading files to Sentry release', () => {
 	})
 
 	it('uploads source and matching source map with SourceMapDevToolPlugin', () => {
-		const webpackConfig = createWebpackConfig({ release });
-        delete webpackConfig.devtool;
-        webpackConfig.plugins.push(new SourceMapDevToolPlugin({
-            filename: 'renamed-the-sourcemap.map'
-        }));
+		const webpackConfig = createWebpackConfig({ release })
+		delete webpackConfig.devtool
+		webpackConfig.plugins.push(new SourceMapDevToolPlugin({
+			filename: 'renamed-the-sourcemap.map'
+		}))
 
 		return runWebpack(webpackConfig)
 			.then(() => fetchFiles(release))

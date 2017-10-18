@@ -19,7 +19,7 @@ module.exports = class SentryPlugin {
 		this.apiKey = options.apiKey
 
 		this.releaseVersion = options.release
-    this.body = options.body || {}
+		this.body = options.body || {}
 
 		this.include = options.include || /\.js$|\.map$/
 		this.exclude = options.exclude
